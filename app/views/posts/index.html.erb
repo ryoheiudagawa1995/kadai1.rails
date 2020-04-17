@@ -14,7 +14,8 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.content %></td>
-        <td><%= link_to "編集する", edit_post_path(post) %></td>
+        <td><%= link_to "詳細を確認する", post_path(post.id) %></td>
+        <td><%= link_to "編集する", edit_post_path(post.id) %></td>
         <td><%= link_to "削除する", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか' } %></td>
       </tr>
     <% end %>
@@ -23,4 +24,4 @@
 
 <br>
 
-<%= link_to '新規', new_post_path %>
+<%= link_to '新規投稿', new_post_path %>

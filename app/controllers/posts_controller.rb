@@ -16,13 +16,29 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save
+    if params[:back]
+      render :new
+    else
+      if @post.save
+        redirect_to posts_path
+      else
+        render :new
+      end
+    end
   end
 
   def update
+    if @post.update(post_params)
+      redirect_to posts_path
+    end
   end
 
   def destroy
+    @post.destroy
+    redirect_to posts_path
+  end
+  def confirm
+    @post = Post.new(post_params)
   end
 
   private
