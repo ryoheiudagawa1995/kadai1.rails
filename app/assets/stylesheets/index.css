@@ -6,15 +6,18 @@ header {
   background-color: gray;
   width: 400px;
 }
-}
 td.content {
-  max-width:　400px;
+  max-width: 400px;
   background-color: gray;
   }
+td.button {
+  width: 50px;
+  margin: 0 auto;
+}
 table a {
   color: black;
-  display: block;
-  margin: 1px;
+  display: inline-block;
+  margin: 0 auto;
 }
 footer{
   background-color: gray;
